@@ -1,0 +1,12 @@
+set datafile separator ","
+set term png
+set output "plotp.png"
+set hidden3d
+set dgrid3d 50,50 qnorm 2
+set xrange [-0.1:65] noreverse writeback
+set yrange [-0.1:65] noreverse writeback
+set zrange [-0.1:10] noreverse writeback
+set ticslevel 0.5
+set xlabel "X"
+set ylabel "Y"
+splot "potencjaly.csv" using 1:2:3 with lines palette title "Potencjał [V]"

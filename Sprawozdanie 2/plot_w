@@ -1,0 +1,12 @@
+set datafile separator ","
+set term png
+set output "plotw.png"
+set hidden3d
+set dgrid3d 50,50 qnorm 2
+set xrange [-0.1:1] noreverse writeback
+set yrange [-0.1:1] noreverse writeback
+set zrange [0:0.6] noreverse writeback
+set ticslevel 0.01
+set xlabel "X"
+set ylabel "Y"
+plot "natezenia_w.csv" using 1:2:3:4 with vectors head filled lt 2 title "Natężenie [V/mm]"
